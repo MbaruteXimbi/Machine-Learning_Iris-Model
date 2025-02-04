@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Prediction Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Iris Prediction Form</h1>
+        <form method="POST" action="/">
+            <label for="feature1">Sepal Length (cm):</label>
+            <input type="text" id="feature1" name="feature1" required>
+
+            <label for="feature2">Sepal Width (cm):</label>
+            <input type="text" id="feature2" name="feature2" required>
+
+            <label for="feature3">Petal Length (cm):</label>
+            <input type="text" id="feature3" name="feature3" required>
+
+            <label for="feature4">Petal Width (cm):</label>
+            <input type="text" id="feature4" name="feature4" required>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if result %}
+            <div class="result">{{ result }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
